@@ -1,0 +1,24 @@
+{
+  "name": "whatsapp_bot",
+  "version": "1.0.0",
+  "description": "Whatsapp bot to detect phishing",
+  "main": "app.js",
+  "dependencies": {
+    "api": "^6.1.1",
+    "axios": "^1.5.1",
+    "dotenv": "^16.3.1",
+    "nodemon": "^3.0.1",
+    "qrcode-terminal": "^0.12.0",
+    "whatsapp-web.js": "^1.22.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "keywords": [
+    "whatsapp"
+  ],
+  "author": "firza",
+  "license": "ISC"
+}
