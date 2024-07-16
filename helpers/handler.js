@@ -16,6 +16,7 @@ const getAnalysis = async (msg, id) => {
 }
 
 const fetchAnalysis = setInterval(async(msg, data, fileSize, startDate) => {
+    console.log('testing', data);
     const analysis = await getAnalysis(msg, data.id)
     const { attributes } = analysis
 

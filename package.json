@@ -9,12 +9,14 @@
     "dotenv": "^16.3.1",
     "nodemon": "^3.0.1",
     "qrcode-terminal": "^0.12.0",
-    "whatsapp-web.js": "^1.22.1"
+    "whatsapp-web.js": "^1.22.2-alpha.3"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "puppeteer": "^22.4.1"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node app.js"
+    "start": "node backup.js"
   },
   "keywords": [
     "whatsapp"

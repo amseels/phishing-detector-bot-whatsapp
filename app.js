@@ -8,6 +8,7 @@ require('dotenv').config();
 
 
 const qrcode = require('qrcode-terminal');
+const { VirusTotal } = require('./services/api/virusTotal');
 
 const client = new Client({
     puppeteer: {
@@ -58,9 +59,19 @@ client.on('message', async msg => {
 
             console.log('File size:', fileSize)
             if (fileSize < 32000000) {
-                const date = new Date();
-                const startDate = date.getTime();
-                fetchAnalysis(msg, media.data, fileSize, startDate);
+                await VirusTotal.uploadData({
+                    file: `./media/document/${messageData['filename']}`
+                })
+                    .then(async (res) => {
+                        const { data } = res;
+                        console.log('========================')
+                        console.log('Response file = ', data)
+                        if (data.id) {
+                            const date = new Date();
+                            const startDate = date.getTime();
+                            fetchAnalysis(msg, data, fileSize, startDate);
+                        }
+                    })
             }
         }
     }

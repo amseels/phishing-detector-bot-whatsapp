@@ -1,5 +1,5 @@
 const { VirusTotal } = require('./services/api/virusTotal');
-const { findEstimatedTime } =  require('./helpers/conversion');
+const { Conversion } =  require('./helpers/conversion');
 
 const { Client } = require('whatsapp-web.js');
 const fs = require('fs');
@@ -7,6 +7,8 @@ const fs = require('fs');
 require('dotenv').config();
 
 const virustotal = new VirusTotal();
+const conversion = new Conversion();
+const { findEstimatedTime } = conversion;
 
 const qrcode = require('qrcode-terminal');
 
